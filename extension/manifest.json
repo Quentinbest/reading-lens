@@ -1,0 +1,30 @@
+{
+  "id": "io.github.quentinbest.explain",
+  "version": "0.1.0",
+  "name": "Explain",
+  "description": "Explains the selected words as they are meant in this passage, in a peek under the text, from the AI provider you choose.",
+  "publisher": "Private (Reading Lens)",
+  "engines": { "linen": "^1.1" },
+  "main": "main.js",
+  "activation": ["onLookup:explain", "onCommand:export-log"],
+  "contributes": {
+    "lookups": [
+      {
+        "id": "explain",
+        "title": "Explain",
+        "when": "(book.lang == \"en\" || book.lang == \"\") && selection.words <= 40 && !book.fixedLayout"
+      }
+    ],
+    "commands": [{ "id": "export-log", "title": "Export Explain Study Log" }],
+    "options": { "page": "options.html" }
+  },
+  "permissions": ["book.selection", "book.metadata", "files.export"],
+  "optionalPermissions": [
+    "network:api.deepseek.com",
+    "network:dashscope-intl.aliyuncs.com",
+    "network:api.openai.com",
+    "network:api.anthropic.com",
+    "network:generativelanguage.googleapis.com",
+    "network:localhost:11434"
+  ]
+}

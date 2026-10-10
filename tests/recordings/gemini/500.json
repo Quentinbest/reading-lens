@@ -1,0 +1,5 @@
+{
+ "status": 500,
+ "content_type": "application/json",
+ "body": "{\"error\":{\"code\":0,\"message\":\"Internal error\",\"status\":\"server_error\"}}"
+}

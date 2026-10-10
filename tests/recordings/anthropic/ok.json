@@ -1,0 +1,5 @@
+{
+ "status": 200,
+ "content_type": "application/json",
+ "body": "{\"id\":\"msg_rec\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-haiku-5-5\",\"content\":[{\"type\":\"text\",\"text\":\"{\\\"status\\\":\\\"ok\\\",\\\"term\\\":\\\"invalidate · 使失效\\\",\\\"meaning\\\":\\\"这里指一个核心写入时，让其他核心缓存中同一行的副本作废，之后读取必须重新获取。\\\",\\\"qualifier\\\":\\\"\\\",\\\"details\\\":[{\\\"label\\\":\\\"Sentence structure\\\",\\\"text\\\":\\\"“A write … invalidates the copies”: the write is the subject.\\\"},{\\\"label\\\":\\\"Why this reading\\\",\\\"text\\\":\\\"The passage is about cache coherence, not about logic.\\\"}],\\\"missing\\\":\\\"\\\"}\"}],\"stop_reason\":\"end_turn\",\"usage\":{\"input_tokens\":420,\"output_tokens\":120}}"
+}

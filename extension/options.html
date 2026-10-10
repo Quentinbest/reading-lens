@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="_kit.css" />
+    <script src="_ui.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 4px 2px;
+        font: 13px/1.45 var(--font-ui, system-ui, -apple-system, sans-serif);
+        color: var(--ink, #22201c);
+        background: var(--popover, #fcfaf6);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 120px minmax(0, 1fr);
+        gap: 0 12px;
+        align-items: center;
+      }
+      .grid > * {
+        padding: 9px 0;
+        border-bottom: 1px solid var(--hairline, #e4ddd1);
+      }
+      .grid > :nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+      label.l,
+      span.l {
+        color: var(--ink-secondary, #6b655c);
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+      }
+      .note {
+        font-size: 11.5px;
+        color: var(--ink-secondary, #6b655c);
+      }
+      select,
+      input[type='text'] {
+        height: 28px;
+        box-sizing: border-box;
+        border: 1px solid var(--hairline, #d9d1c3);
+        border-radius: 6px;
+        background: var(--ground, #f7f3ec);
+        color: inherit;
+        font: inherit;
+        padding: 0 8px;
+      }
+      input[type='text'] {
+        width: 220px;
+        font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+        font-size: 12.5px;
+      }
+      button {
+        height: 26px;
+        padding: 0 10px;
+        border-radius: 6px;
+        border: 1px solid var(--hairline, #d9d1c3);
+        background: var(--popover, #fcfaf6);
+        color: inherit;
+        font: 500 12.5px var(--font-ui, system-ui, sans-serif);
+      }
+      button.link {
+        border: 0;
+        background: none;
+        padding: 0;
+        height: auto;
+        color: var(--accent, #8c4a2f);
+        font-weight: 600;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent, #8c4a2f);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <label class="l" for="provider">Provider</label>
+      <div class="col">
+        <select id="provider"></select>
+        <span class="note" id="provider-note"></span>
+      </div>
+      <label class="l" for="model">Model</label>
+      <div class="col">
+        <input id="model" type="text" spellcheck="false" autocomplete="off" />
+        <span class="note" id="model-note"></span>
+      </div>
+      <span class="l">Address</span>
+      <div class="col">
+        <span id="host-state"></span>
+        <button type="button" id="allow" hidden>Allow…</button>
+      </div>
+      <span class="l" id="key-label">Key</span>
+      <div class="col" id="key-row">
+        <span><span id="key-state"></span> <button type="button" class="link" id="key">Add key…</button></span>
+        <span class="note" id="key-note"></span>
+      </div>
+      <span class="l">Study log</span>
+      <div class="col">
+        <label><input type="checkbox" id="studylog" /> Keep a private log for a reading study</label>
+        <span class="note" id="log-note">Stays on this Mac: lengths, times and outcomes, never the text. Export it with ⌘K › Export Explain Study Log.</span>
+      </div>
+    </div>
+    <script src="lib/presets.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

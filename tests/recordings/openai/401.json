@@ -1,0 +1,5 @@
+{
+ "status": 401,
+ "content_type": "application/json",
+ "body": "{\"error\":{\"message\":\"Invalid API key\",\"type\":\"authentication_error\",\"param\":null,\"code\":\"authentication_error\"}}"
+}

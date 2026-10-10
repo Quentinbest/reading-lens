@@ -1,0 +1,5 @@
+{
+ "status": 200,
+ "content_type": "application/json",
+ "body": "{\"id\":\"chatcmpl-rec\",\"object\":\"chat.completion\",\"model\":\"m\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":420,\"completion_tokens\":120,\"total_tokens\":540}}"
+}

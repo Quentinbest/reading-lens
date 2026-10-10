@@ -1,0 +1,5 @@
+{
+ "status": 403,
+ "content_type": "application/json",
+ "body": "{\"error\":{\"message\":\"Permission denied\",\"type\":\"permission_error\",\"param\":null,\"code\":\"permission_error\"}}"
+}

@@ -1,0 +1,5 @@
+{
+ "status": 404,
+ "content_type": "application/json",
+ "body": "{\"error\":{\"code\":0,\"message\":\"The model does not exist\",\"status\":\"not_found_error\"}}"
+}
