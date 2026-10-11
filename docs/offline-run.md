@@ -1,6 +1,6 @@
 # The offline check (Reading Lens Stage 3, Gate 2)
 
-Explain's answers on real stuck points from the Stage 1 diary, from two or three models, scored blind by two bilingual reviewers. Gate 2 (read-book `docs/decisions.md`, item 59): agreement α ≥ .67 on `severe` first; then, per model, the severe-misleading rate's **one-sided 95% Clopper–Pearson upper bound is at most 5%**, over at least 60 items. With 60 items that means no severe answer; with 120, one. The rubric below is read-book item 87 (provisional).
+Explain's answers on real stuck points from the Stage 1 diary, from two or three models, scored blind by two bilingual reviewers. Gate 2 (read-book `docs/decisions.md`, item 59): agreement α ≥ .67 on `severe` first; then, per model, the severe-misleading rate's **one-sided 95% Clopper–Pearson upper bound is at most 5%**, over at least 60 items. With 60 items that means no severe answer; with 120, one. The rubric below is read-book item 87, approved 2026-10-11.
 
 **Privacy.** Items, answers and sheets hold book text and readers' words. Keep them outside every repository, this one included. Step 3 sends the items' text to the providers you name.
 
