@@ -44,7 +44,7 @@ The code is plain scripts loaded into Linen's Worker (`extension/main.js` with `
 
 ## Known limits (v0.1)
 
-- **The answer's language** follows the peek's language menu, which offers Linen's own UI language and English. With Linen in English, choose “Explain · English”, or set Linen's language to 简体中文 for Chinese answers. The Chinese term is asked for either way.
+- **The answer's language** follows the peek's language menu: Linen's UI language, then macOS's preferred languages, then English (Linen item 86, read-book #25). Add 简体中文 to macOS's preferred languages to get “Explain · 简体中文” with Linen in English. The Chinese term is asked for either way.
 - **No Test connection** in Options yet: an options page can't make requests through Linen. The first Explain shows any setup error, with Open options.
 - **Outcomes the peek keeps** (expanded, copied, “Helped / Wrong”) don't reach extensions, so the study log records only answered, needs context, cancelled and errors.
 - **Retry-After** isn't exposed by `net.fetch`; a 429 shows “limiting requests” either way.
