@@ -1,0 +1,5 @@
+{
+ "status": 200,
+ "content_type": "application/json",
+ "body": "{\"id\":\"fd0c375b-cce9-4ed0-ad3b-9d839f0fa056\",\"object\":\"chat.completion\",\"created\":1791707462,\"model\":\"deepseek-flash\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"status\\\": \\\"ok\\\", \\\"term\\\": \\\"invalidate · 使失效\\\", \\\"meaning\\\": \\\"使其他核心持有的该缓存行副本变为无效，之后不能再直接使用，必须重新从内存或其他核心获取。\\\", \\\"qualifier\\\": \\\"\\\", \\\"details\\\": [{\\\"label\\\": \\\"句子结构\\\", \\\"text\\\": \\\"A write on one core 是主语，invalidates 是谓语，the copies held by the others 是宾语，表示一次写操作导致其他核心的副本失效。\\\"}, {\\\"label\\\": \\\"为何这样理解\\\", \\\"text\\\": \\\"下一句说那些核心的下一次读会 miss，说明失效后副本不再可用，这正是多核缓存一致性协议中的失效操作。\\\"}, {\\\"label\\\": \\\"其他用法\\\", \\\"text\\\": \\\"invalidate 在计算机领域常指使缓存、页表项或预测结果失效；日常英语中则指使某事物失去效力。\\\"}], \\\"missing\\\": \\\"\\\"}\"},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":401,\"completion_tokens\":192,\"total_tokens\":593,\"prompt_tokens_details\":{\"cached_tokens\":0},\"prompt_cache_hit_tokens\":0,\"prompt_cache_miss_tokens\":401},\"system_fingerprint\":\"aeb56401ca74e127821c4f9126dcb669\"}"
+}

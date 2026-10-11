@@ -15,6 +15,12 @@ Checked on **2026-10-11** against each provider's documentation and policy pages
 
 Each reader can change the model in Explain's options; the default is only a starting point.
 
+## Live captures
+
+| Preset | Date | Result |
+|---|---|---|
+| DeepSeek | 2026-10-11 | `deepseek-flash`, HTTP 200 in 1.7 s, thinking off (no reasoning tokens), a valid answer with the term “invalidate · 使失效”. Recorded in `tests/recordings/deepseek/live.json` and replayed by the tests |
+
 ## What each first-request notice says (EX8)
 
 Each notice names what is sent (the selection, its sentence with one on each side, at most 1,200 characters, and the book's title, author and chapter) and the host, then one sentence from the provider's own policy. Only what the policy pages say plainly is in a notice.
