@@ -42,6 +42,10 @@ DEEPSEEK_API_KEY=… npm run live -- deepseek --record   # also save tests/recor
 
 The code is plain scripts loaded into Linen's Worker (`extension/main.js` with `importScripts`). `tests/harness.mjs` runs the same files with a fake `linen`; `tests/linen-validate.mjs` is a port of Linen's answer validator, so every answer is checked as the peek would check it. `tests/recordings/make.mjs` writes the replayed responses from each provider's documented shape.
 
+## The offline check (Gate 2)
+
+`offline/` turns the Stage 1 diary's local stuck points into Gate 2's blind check: items, answers from two or three models, sheets for two reviewers, and the score (α, and each model's severe-misleading rate with its Clopper–Pearson bound). Steps and the reviewers' rubric: `docs/offline-run.md`.
+
 ## Known limits (v0.1)
 
 - **The answer's language** follows the peek's language menu: Linen's UI language, then macOS's preferred languages, then English (Linen item 86, read-book #25). Add 简体中文 to macOS's preferred languages to get “Explain · 简体中文” with Linen in English. The Chinese term is asked for either way.

@@ -16,6 +16,12 @@ const walk = (d) => {
 }
 walk(ext)
 
+for (const f of readdirSync(new URL('../offline/', import.meta.url)))
+  try {
+    execFileSync(process.execPath, ['--check', fileURLToPath(new URL(`../offline/${f}`, import.meta.url))], { stdio: 'pipe' })
+  } catch (e) {
+    problems.push(`offline/${f}: ${String(e.stderr)}`)
+  }
 for (const f of files.filter((f) => f.endsWith('.js')))
   try {
     execFileSync(process.execPath, ['--check', `${ext}${f}`], { stdio: 'pipe' })
