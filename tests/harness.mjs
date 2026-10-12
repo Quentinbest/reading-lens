@@ -50,7 +50,7 @@ export function load({
     for (const f of files) vm.runInContext(readFileSync(EXT + f, 'utf8'), ctx, { filename: f })
   }
   ctx.linen = {
-    apiVersion: '1.1.0',
+    apiVersion: '1.2.0',
     storage: {
       get: async (k) => (storage.has(k) ? storage.get(k) : null),
       set: async (k, v) => void storage.set(k, String(v)),

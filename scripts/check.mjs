@@ -30,7 +30,10 @@ for (const f of files.filter((f) => f.endsWith('.js')))
   }
 
 const m = JSON.parse(readFileSync(`${ext}manifest.json`, 'utf8'))
-if (!/^\^1\.1/.test(m.engines?.linen)) problems.push('engines.linen must allow 1.1')
+// Linen's selection bar (read-book SB4, Host API 1.2): Explain's button, with the icon Linen draws.
+if (!/^\^1\.2/.test(m.engines?.linen)) problems.push('engines.linen must ask for 1.2 (the lookup icon)')
+for (const l of m.contributes.lookups)
+  if (l.icon !== undefined && l.icon !== 'lightbulb') problems.push(`lookup icon ${l.icon}: Linen draws only lightbulb`)
 for (const p of m.optionalPermissions)
   if (!/^network:[a-z0-9.-]+(:\d+)?$/.test(p)) problems.push(`optional permission ${p}`)
 if (m.permissions.includes('book.text')) problems.push('EX2: never book.text')

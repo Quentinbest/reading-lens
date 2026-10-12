@@ -1,24 +1,24 @@
-# Explain for Linen
+# Reading Lens for Linen
 
-Explain tells you what the words you selected mean **in this passage**, in a peek under the text, from an AI provider you choose. It is the Explain extension of Reading Lens (read-book `docs/reading-lens-plan.md`, rules EX1–EX10), built against Linen's Host API 1.1.
+Reading Lens (named Explain until 0.2.0; read-book item 95) tells you, when you choose **Explain**, what the words you selected mean **in this passage**, in a peek under the text, from an AI provider you choose. Its ID stays `io.github.quentinbest.explain`, so keys, permissions and settings carry over from 0.1.0. It is the Explain extension of Reading Lens (read-book `docs/reading-lens-plan.md`, rules EX1–EX10), built against Linen's Host API 1.2 (1.1 plus the lookup's `icon`).
 
 **Private.** Explain is for personal use until the Reading Lens pilot passes (Gate 3, Decision 10-09). Keep it out of the public Linen repository until then.
 
 ## Install
 
 ```sh
-npm run pack        # dist/explain-0.1.0.linenext
+npm run pack        # dist/explain-0.2.0.linenext
 ```
 
-In Linen: Settings › Extensions › Install from file…, then choose the package. Explain asks only to read the text you select, see the book's title and author, and save the study log where you choose. It gets no network at install.
+In Linen: Settings › Extensions › Install from file…, then choose the package. Explain 0.2.0 needs a Linen with Host API 1.2, where it has a lightbulb button after Look Up in the selection bar (read-book `docs/selection-bar-plan.md`, SB4); Linen 0.4.2 and earlier refuse it, so use 0.1.0 with them. Explain asks only to read the text you select, see the book's title and author, and save the study log where you choose. It gets no network at install.
 
-Then **Options…** on Explain's row:
+Then **Options…** on Reading Lens's row:
 
 1. **Provider:** DeepSeek, Qwen (international), OpenAI, Anthropic, Gemini, or Ollama on this Mac. Choosing one asks Linen to allow its address.
 2. **Model:** the preset's default, or any model the provider offers. Use a model that answers without long reasoning: Linen gives a lookup 10 seconds.
 3. **Add key…:** typed into Linen's own dialog and kept in your Mac's Keychain. Explain never sees it; Linen adds it only to requests to that provider's address. Ollama needs no key.
 
-Select a passage (up to 40 words, in an English book), then ⋯ › **Explain**, or ⌘K. The first time, the peek says what will be sent and where; nothing goes out until you choose Continue.
+Select a passage (up to 40 words, in an English book), then the lightbulb after Look Up, **Explain in context** (with Linen 0.4.2 and Explain 0.1.0: ⋯ › **Explain**), or ⌘K. The first time, the peek says what will be sent and where; nothing goes out until you choose Continue.
 
 ## What it sends
 
@@ -38,7 +38,7 @@ DEEPSEEK_API_KEY=… npm run live           # one fixed sentence to DeepSeek (ne
 DEEPSEEK_API_KEY=… npm run live -- deepseek --record   # also save tests/recordings/deepseek/live.json
 ```
 
-**Trying it in Linen without any provider:** run `node scripts/fake-ollama.mjs`, choose “Ollama on this Mac” in Explain's options with any model name, and Explain a passage. It answers with a fixed explanation and sends nothing anywhere. `--slow` shows Linen's timeout state; `--missing` shows “not set up” (the model isn't installed).
+**Trying it in Linen without any provider:** run `node scripts/fake-ollama.mjs`, choose “Ollama on this Mac” in Reading Lens's options with any model name, and Explain a passage. It answers with a fixed explanation and sends nothing anywhere. `--slow` shows Linen's timeout state; `--missing` shows “not set up” (the model isn't installed).
 
 The code is plain scripts loaded into Linen's Worker (`extension/main.js` with `importScripts`). `tests/harness.mjs` runs the same files with a fake `linen`; `tests/linen-validate.mjs` is a port of Linen's answer validator, so every answer is checked as the peek would check it. `tests/recordings/make.mjs` writes the replayed responses from each provider's documented shape.
 

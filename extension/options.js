@@ -58,7 +58,7 @@
       const has = await call('secrets.has', { name: Explain.secretName(key) })
       $('key-state').textContent = has ? 'In your Mac’s Keychain ·' : 'No key yet ·'
       $('key').textContent = has ? 'Change key…' : 'Add key…'
-      $('key-note').textContent = `Explain never sees the key. Linen adds it only to requests to ${p.host}.`
+      $('key-note').textContent = `Reading Lens never sees the key. Linen adds it only to requests to ${p.host}.`
     }
     $('studylog').checked = settings.studyLog
   }
