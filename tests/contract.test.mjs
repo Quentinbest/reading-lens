@@ -98,7 +98,9 @@ describe('network failures (§6.9, O17)', () => {
   for (const [what, message, kind, preset] of [
     ['DNS', 'the request failed: Dns Failed: resolve dns name', 'offline', 'deepseek'],
     ['TLS', 'the request failed: Connection Failed: tls connection init failed', 'offline', 'anthropic'],
-    ['a timeout', 'the request failed: Network Error: timed out reading response', 'offline', 'gemini'],
+    // Linen gives up after 8 s (read-book Q5): a slow provider, not a lost connection.
+    ['a timeout', 'the request failed: Network Error: timed out reading response', 'unavailable', 'gemini'],
+    ['a connect timeout', 'the request failed: Connection Failed: Connect error: connection timed out', 'unavailable', 'deepseek'],
     ['Ollama not running', 'the request failed: Connection Failed: Connect error: Connection refused (os error 61)', 'unavailable', 'ollama'],
     ['a host the reader removed', 'not allowed to connect to https://api.openai.com/v1/chat/completions', 'not_configured', 'openai'],
   ])

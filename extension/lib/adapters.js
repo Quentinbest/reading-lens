@@ -94,6 +94,9 @@
     // O17: Ollama not running on this Mac.
     if (key === 'ollama' && /refused|connect/i.test(m))
       return new ProviderError('unavailable', 'Ollama isn’t running on this Mac')
+    // Linen gives up on a request after 8 s (read-book, Q5): the provider was slow, the
+    // connection wasn't lost, so “isn't available right now”, not “You're offline”.
+    if (/timed out|timeout/i.test(m)) return new ProviderError('unavailable', m.slice(0, 200))
     return new ProviderError('offline', m.slice(0, 200))
   }
 
